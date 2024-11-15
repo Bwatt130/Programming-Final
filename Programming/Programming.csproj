@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,32 +47,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="LandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LandingPage.Designer.cs">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PatientOptions.cs">
+    <Compile Include="Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatientOptions.Designer.cs">
-      <DependentUpon>PatientOptions.cs</DependentUpon>
+    <Compile Include="Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhysicianOptions.cs">
+    <Compile Include="PatientDataTier.cs" />
+    <Compile Include="PatientPrescription.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhysicianOptions.Designer.cs">
-      <DependentUpon>PhysicianOptions.cs</DependentUpon>
+    <Compile Include="PatientPrescription.Designer.cs">
+      <DependentUpon>PatientPrescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrescriptionOptions.cs">
+    <Compile Include="Pharmacist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrescriptionOptions.Designer.cs">
-      <DependentUpon>PrescriptionOptions.cs</DependentUpon>
+    <Compile Include="Pharmacist.Designer.cs">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
     </Compile>
+    <Compile Include="PharmacistDataTier.cs" />
+    <Compile Include="PrescriptionDataTier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefillDataTier.cs" />
+    <Compile Include="Refills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Refills.Designer.cs">
+      <DependentUpon>Refills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="state.cs" />
+    <Compile Include="StateManager.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandingPage.resx">
+      <DependentUpon>LandingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientPrescription.resx">
+      <DependentUpon>PatientPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacist.resx">
+      <DependentUpon>Pharmacist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,7 +114,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Refills.resx">
+      <DependentUpon>Refills.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LPLogoGradient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\State.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
